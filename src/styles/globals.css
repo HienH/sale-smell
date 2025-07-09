@@ -1,0 +1,256 @@
+/**
+ * @fileoverview Global CSS styles for the Sale-Smell application
+ * 
+ * This file imports Tailwind CSS and defines global styles for the
+ * Sale-Smell AI-powered sales call analysis application.
+ * 
+ * Key Features:
+ * - Tailwind CSS base, components, and utilities
+ * - Custom global styles and variables
+ * - Responsive design foundations
+ * - Accessibility improvements
+ * 
+ * @author Sale-Smell Team
+ * @version 1.0.0
+ * @since 2024-01-01
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Base styles */
+@layer base {
+
+    /* Custom CSS variables for consistent theming */
+    :root {
+        --color-primary-50: #f0f9ff;
+        --color-primary-100: #e0f2fe;
+        --color-primary-200: #bae6fd;
+        --color-primary-300: #7dd3fc;
+        --color-primary-400: #38bdf8;
+        --color-primary-500: #0ea5e9;
+        --color-primary-600: #0284c7;
+        --color-primary-700: #0369a1;
+        --color-primary-800: #075985;
+        --color-primary-900: #0c4a6e;
+
+        --color-secondary-50: #fdf4ff;
+        --color-secondary-100: #fae8ff;
+        --color-secondary-200: #f5d0fe;
+        --color-secondary-300: #f0abfc;
+        --color-secondary-400: #e879f9;
+        --color-secondary-500: #d946ef;
+        --color-secondary-600: #c026d3;
+        --color-secondary-700: #a21caf;
+        --color-secondary-800: #86198f;
+        --color-secondary-900: #701a75;
+    }
+
+    /* Dark mode variables */
+    .dark {
+        --color-primary-50: #0c4a6e;
+        --color-primary-100: #075985;
+        --color-primary-200: #0369a1;
+        --color-primary-300: #0284c7;
+        --color-primary-400: #0ea5e9;
+        --color-primary-500: #38bdf8;
+        --color-primary-600: #7dd3fc;
+        --color-primary-700: #bae6fd;
+        --color-primary-800: #e0f2fe;
+        --color-primary-900: #f0f9ff;
+    }
+
+    /* Global HTML and body styles */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-feature-settings: 'rlig' 1, 'calt' 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Focus styles for accessibility */
+    *:focus {
+        outline: 2px solid var(--color-primary-500);
+        outline-offset: 2px;
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+/* Component styles */
+@layer components {
+
+    /* Button base styles */
+    .btn {
+        @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+    }
+
+    .btn-primary {
+        @apply bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary-600 text-white hover:bg-secondary-700 active:bg-secondary-800;
+    }
+
+    .btn-outline {
+        @apply border border-gray-300 bg-transparent hover:bg-gray-50 active:bg-gray-100;
+    }
+
+    .btn-ghost {
+        @apply bg-transparent hover:bg-gray-100 active:bg-gray-200;
+    }
+
+    /* Card base styles */
+    .card {
+        @apply rounded-lg border bg-white shadow-sm;
+    }
+
+    .card-header {
+        @apply flex flex-col space-y-1.5 p-6;
+    }
+
+    .card-title {
+        @apply text-2xl font-semibold leading-none tracking-tight;
+    }
+
+    .card-description {
+        @apply text-sm text-gray-500;
+    }
+
+    .card-content {
+        @apply p-6 pt-0;
+    }
+
+    .card-footer {
+        @apply flex items-center p-6 pt-0;
+    }
+
+    /* Input base styles */
+    .input {
+        @apply flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    /* Label base styles */
+    .label {
+        @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+    }
+
+    /* Badge base styles */
+    .badge {
+        @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    }
+
+    .badge-default {
+        @apply border-transparent bg-primary-600 text-primary-50 hover:bg-primary-600/80;
+    }
+
+    .badge-secondary {
+        @apply border-transparent bg-secondary-600 text-secondary-50 hover:bg-secondary-600/80;
+    }
+
+    .badge-outline {
+        @apply text-gray-600;
+    }
+}
+
+/* Utility styles */
+@layer utilities {
+
+    /* Custom scrollbar */
+    .scrollbar-thin {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-primary-300) transparent;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary-300);
+        border-radius: 3px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-primary-400);
+    }
+
+    /* Text selection */
+    .selection-primary::selection {
+        background-color: var(--color-primary-200);
+        color: var(--color-primary-900);
+    }
+
+    /* Custom animations */
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .animate-slide-up {
+        animation: slideUp 0.3s ease-out;
+    }
+
+    .animate-pulse-slow {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Custom keyframes */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Responsive utilities */
+    .container-responsive {
+        @apply mx-auto px-4 sm:px-6 lg:px-8;
+        max-width: 1200px;
+    }
+
+    /* Print styles */
+    @media print {
+        .no-print {
+            display: none !important;
+        }
+    }
+}
