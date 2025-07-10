@@ -18,7 +18,7 @@
 
 import React from 'react';
 
-import { FileUpload } from '@/components/forms/FileUpload';
+import { EnhancedFileUpload } from '@/components/forms/EnhancedFileUpload';
 
 /**
  * @description Main homepage component
@@ -43,6 +43,14 @@ const HomePage = (): React.JSX.Element => {
                     <p className="mt-2 text-base text-gray-500 sm:text-lg">
                         Upload your sales calls and get intelligent, actionable feedback
                     </p>
+                    <div className="mt-6">
+                        <a
+                            href="/dashboard"
+                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200"
+                        >
+                            Go to Dashboard
+                        </a>
+                    </div>
                 </div>
             </header>
 
@@ -60,7 +68,7 @@ const HomePage = (): React.JSX.Element => {
                             </p>
                         </div>
 
-                        <FileUpload />
+                        <EnhancedFileUpload />
                     </section>
 
                     {/* Features Section */}

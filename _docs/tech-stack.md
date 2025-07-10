@@ -182,7 +182,6 @@ This document outlines the technology stack chosen for the Sale-Smell MVP, using
 - **Features Used:**
   - Speaker labels
   - Sentiment analysis
-  - Entity detection
   - Summarization
   - PII redaction
 

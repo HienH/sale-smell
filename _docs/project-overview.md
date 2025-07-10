@@ -38,7 +38,6 @@ speaker_labels: true
 
 sentiment_analysis: true
 
-entity_detection: true
 
 summarization: true
 
@@ -124,7 +123,6 @@ Transcript with speaker labels
 
 Sentiment scores
 
-Entities/keywords
 
 Final Output (to UI + PDF):
 Call summary

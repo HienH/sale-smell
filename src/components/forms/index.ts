@@ -10,4 +10,6 @@
  */
 
 export { FileUpload } from './FileUpload';
-export type { FileUploadProps } from './FileUpload'; 
+export type { FileUploadProps } from './FileUpload';
+export { EnhancedFileUpload } from './EnhancedFileUpload';
+export type { EnhancedFileUploadProps } from './EnhancedFileUpload'; 

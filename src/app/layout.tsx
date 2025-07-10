@@ -18,6 +18,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import React from 'react';
+import { Navigation } from '@/components/layout/Navigation';
 import '@/styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -110,6 +111,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }): React.JSX.Elem
             </head>
             <body className={`${inter.className} h-full antialiased`}>
                 <div id="root" className="h-full">
+                    <Navigation />
                     {children}
                 </div>
             </body>

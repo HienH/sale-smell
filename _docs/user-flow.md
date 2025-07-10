@@ -38,7 +38,7 @@
   - Provide feedback on download success or failure.
 
 ### System Response
-- Backend sends audio to AssemblyAI for transcription, sentiment, entity, and PII analysis.
+- Backend sends audio to AssemblyAI for transcription, sentiment, and PII analysis.
 - On completion, receive transcript and analysis data.
 - Make transcript available for download.
 

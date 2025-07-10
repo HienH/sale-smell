@@ -87,7 +87,7 @@ I need to integrate AssemblyAI for audio transcription in Sale-Smell. This is a 
 Context:
 - Next.js 14 with API routes
 - AssemblyAI API for transcription
-- Features needed: speaker labels, sentiment analysis, entity detection
+- Features needed: speaker labels, sentiment analysis,
 - Error handling and retry logic required
 - Progress tracking for long transcriptions
 

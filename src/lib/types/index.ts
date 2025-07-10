@@ -36,17 +36,28 @@ export interface FileUploadResponse {
 }
 
 /**
- * @description Transcription result type
+ * @description Auto highlight type
+ */
+export interface AutoHighlight {
+    text: string;
+    count: number;
+    rank: number;
+    timestamps: { start: number; end: number }[];
+}
+
+/**
+ * @description Transcription result interface
  */
 export interface TranscriptionResult {
     id: string;
-    status: 'queued' | 'processing' | 'completed' | 'error';
-    text?: string;
-    speakers?: SpeakerSegment[];
-    sentiment?: SentimentAnalysis;
-    entities?: EntityDetection[];
-    summary?: string;
+    status: string;
+    text: string;
     error?: string;
+    speakers?: SpeakerSegment[];
+    sentiment?: SentimentAnalysis | null;
+    summary?: string;
+    piiRedactions?: PIIRedaction[];
+    autoHighlights?: AutoHighlight[];
 }
 
 /**
@@ -58,13 +69,14 @@ export interface SpeakerSegment {
     start: number;
     end: number;
     confidence: number;
+    sentiment?: string; // Optional sentiment field
 }
 
 /**
  * @description Sentiment analysis type
  */
 export interface SentimentAnalysis {
-    overall: 'positive' | 'negative' | 'neutral';
+    overall: 'POSITIVE' | 'NEGATIVE' | 'NEUTRAL';
     scores: {
         positive: number;
         negative: number;
@@ -78,18 +90,18 @@ export interface SentimentAnalysis {
  */
 export interface SentimentSegment {
     text: string;
-    sentiment: 'positive' | 'negative' | 'neutral';
+    sentiment: 'POSITIVE' | 'NEGATIVE' | 'NEUTRAL';
     confidence: number;
     start: number;
     end: number;
 }
 
 /**
- * @description Entity detection type
+ * @description PII redaction type
  */
-export interface EntityDetection {
+export interface PIIRedaction {
     text: string;
-    type: string;
+    type: 'PERSON_NAME' | 'EMAIL_ADDRESS' | 'PHONE_NUMBER' | 'CREDIT_CARD_NUMBER' | 'SSN' | 'DATE' | 'ADDRESS';
     confidence: number;
     start: number;
     end: number;

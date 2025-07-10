@@ -207,7 +207,6 @@ src/lib/stores/
 - **File Upload:** Secure file upload to AssemblyAI
 - **Transcription:** Real-time transcription with speaker labels
 - **Sentiment Analysis:** Emotion detection per speaker
-- **Entity Detection:** Key terms and phrases identification
 - **Error Handling:** Comprehensive error handling and retry logic
 
 ### Ollama Integration

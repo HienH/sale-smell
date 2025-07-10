@@ -26,6 +26,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                // Ring color for focus states
+                ring: '#0ea5e9',
+                // Background color for ring offset
+                background: '#ffffff',
                 // Primary brand colors
                 primary: {
                     50: '#f0f9ff',
