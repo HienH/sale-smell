@@ -1,40 +1,42 @@
 {
-    "extends": [
-        "next/core-web-vitals",
-        "next/typescript"
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    // React specific rules
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "react/no-unescaped-entities": "warn",
+    // General code quality rules
+    "no-console": [
+      "warn",
+      {
+        "allow": ["error"]
+      }
     ],
-    "rules": {
-        // React specific rules
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/prop-types": "off",
-        "react/display-name": "off",
-        "react/no-unescaped-entities": "warn",
-        // General code quality rules
-        "no-console": "warn",
-        "no-debugger": "error",
-        "prefer-const": "error",
-        "no-var": "error",
-        // Import rules
-        "import/order": [
-            "error",
-            {
-                "groups": [
-                    "builtin",
-                    "external",
-                    "internal",
-                    "parent",
-                    "sibling",
-                    "index"
-                ],
-                "newlines-between": "always",
-                "alphabetize": {
-                    "order": "asc",
-                    "caseInsensitive": true
-                }
-            }
+    "no-debugger": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    // Import rules
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
         ],
-        // TypeScript rules
-        "@typescript-eslint/no-explicit-any": "off"
-    }
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    // TypeScript rules
+    "@typescript-eslint/no-explicit-any": "off"
+  }
 }

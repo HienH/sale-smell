@@ -233,7 +233,7 @@ export class AssemblyAIService {
       const buffer = Buffer.from(arrayBuffer);
       return buffer;
     } catch (error) {
-      throw new Error('Failed to convert file to buffer');
+      throw new Error(`Failed to convert file to buffer ${error}`);
     }
   }
 
