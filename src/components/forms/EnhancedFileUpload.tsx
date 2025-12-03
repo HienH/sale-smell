@@ -19,6 +19,7 @@
 'use client';
 
 import React, { useCallback } from 'react';
+
 import { useTranscription } from '@/lib/hooks/useTranscription';
 import type { TranscriptionResult } from '@/lib/types';
 

@@ -18,6 +18,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import React from 'react';
+
 import { Navigation } from '@/components/layout/Navigation';
 import '@/styles/globals.css';
 

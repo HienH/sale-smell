@@ -17,9 +17,10 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+
 import { createAssemblyAIService } from '@/lib/api/assemblyai';
-import { validateAudioFile } from '@/lib/utils/file';
 import type { ApiResponse, TranscriptionResult } from '@/lib/types';
+import { validateAudioFile } from '@/lib/utils/file';
 
 /**
  * @description POST handler for file upload and transcription
